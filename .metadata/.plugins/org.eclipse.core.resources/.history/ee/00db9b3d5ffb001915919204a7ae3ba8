@@ -1,0 +1,10 @@
+package com.codingDojo.object.master;
+
+public class Samurai extends Human {
+	
+	Samurai(){
+		super.setHealth(200);
+	}
+	
+
+}

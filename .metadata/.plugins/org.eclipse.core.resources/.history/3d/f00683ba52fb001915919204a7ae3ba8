@@ -1,0 +1,21 @@
+package com.codingDojo.object.master;
+
+public class Human {
+	private int strength;
+	private int health;
+	private int intelligence;
+	
+	Human(){
+		strength = 3;
+		health = 3;
+		intelligence = 3;
+	}
+	
+	Human(int strength,int health,int intelligence){
+		this.strength = strength;
+		this.health = health;
+		this.intelligence = intelligence;
+	}
+	
+	
+}

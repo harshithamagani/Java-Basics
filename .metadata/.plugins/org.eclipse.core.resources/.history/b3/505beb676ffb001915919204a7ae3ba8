@@ -1,0 +1,83 @@
+package com.coding.dojo.bank;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+
+public class BankAccount {
+	private String accountNumber;
+	private double checkingBalance;
+	private double savingsBalance;
+	private static int numOfAccount;
+	private static double accBalanceTotalBank;
+	
+	BankAccount(){
+		this.accountNumber=randomString();
+		this.checkingBalance = 0.0;
+		this.savingsBalance = 0.0;
+		accBalanceTotalBank = checkingBalance + savingsBalance;
+	}
+	
+	BankAccount(double checkingBalance, double savingsBalance){
+		this.accountNumber=randomString();
+		this.checkingBalance = checkingBalance;
+		this.savingsBalance =  savingsBalance;
+		numOfAccount++;
+		accBalanceTotalBank = checkingBalance + savingsBalance;
+	}
+	
+	
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+	public double getCheckingBalance() {
+		return checkingBalance;
+	}
+	public void setCheckingBalance(double checkingBalance) {
+		this.checkingBalance = checkingBalance;
+	}
+	public double getSavingsBalance() {
+		return savingsBalance;
+	}
+	public void setSavingsBalance(double savingsBalance) {
+		this.savingsBalance = savingsBalance;
+	}
+	
+	String randomString(){
+        Random r = new Random();
+        Character [] alpha = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+        ArrayList<Character> listOfChar = new ArrayList<>();
+        Collections.addAll(listOfChar,alpha); 
+        String randomStr = "";
+        for(int i=0;i<10;i++){       
+        int num = r.nextInt(25);
+        Character randChar = alpha[num];
+        randomStr = randomStr.concat(randChar.toString());
+        }
+        return randomStr; 
+    }
+	
+	public static int getNumOfAccount(){
+		return numOfAccount;
+	}
+	
+	public void depositMoneyCheckingAcc(double amount) {
+		this.checkingBalance = this.checkingBalance + amount;
+	}
+	
+	public void depositMoneySavingAcc(double amount) {
+		this.savingsBalance = this.savingsBalance + amount;
+	}
+	
+	public void withDrawMoneySavingAcc(double amount) {
+		this.savingsBalance = this.savingsBalance - amount;
+	}
+	
+	public void withDrawMoneyCheckingAcc(double amount) {
+		this.savingsBalance = this.savingsBalance - amount;
+	}
+
+}

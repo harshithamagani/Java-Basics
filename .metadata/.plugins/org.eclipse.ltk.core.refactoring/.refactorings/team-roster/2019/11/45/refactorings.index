@@ -1,0 +1,11 @@
+1572990580579	Encapsulate field 'first_name'
+1572990586106	Encapsulate field 'last_name'
+1572990592057	Encapsulate field 'age'
+1572990796110	Encapsulate field 'team_name'
+1572990801353	Encapsulate field 'team'
+1572991098913	Delete element
+1572996301716	Rename type 'Team'
+1572996858453	Infer generic type arguments
+1573007263309	Rename type 'Player'
+1573007283261	Rename type 'ShowPlayer'
+1573007307452	Rename type 'Player'

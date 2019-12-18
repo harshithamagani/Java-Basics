@@ -1,0 +1,10 @@
+package com.coding.dojo.bank;
+
+public class BankAccountTest {
+	public static void main(String [] args) {
+		BankAccount b1 = new BankAccount(400,500);
+		BankAccount b2 = new BankAccount(100,5000);
+		
+		b1.depositMoneyCheckingAcc(amount);
+	}
+}

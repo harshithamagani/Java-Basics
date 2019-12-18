@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pets Form</title>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="dog-section">
+			<form action="/dog" method="GET">
+				<input name="name" type="text">
+				<input name="breed" type="text">
+				<input name="weight" type="text"> 
+				<input name="submit" type="submit" value="Submit">
+			</form>
+		</div>
+		<div id="cat-section">
+		<form action="/cat" method="GET">
+			<input name="name" type="text">
+			<input name="breed" type="text">
+			<input name="weight" type="text"> 
+			<input name="submit" type="submit" value="Submit">
+		</form>
+		</div>
+	</div>
+</body>
+</html>

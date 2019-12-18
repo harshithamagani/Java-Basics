@@ -1,0 +1,14 @@
+package com.codingDojo.object.master;
+
+public class Samurai extends Human {
+	
+	Samurai(){
+		super.setHealth(200);
+	}
+	
+	public void deathBlow(Human other) {
+		this.setHealth(this.getHealth()/2);
+		other.setHealth(0);	
+	}
+
+}

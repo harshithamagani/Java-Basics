@@ -1,0 +1,10 @@
+package com.coding.dojo.phone;
+
+public class IPhone extends Phone {
+
+	public IPhone(String versionNumber, int batteryPercentage, String carrier, String ringTone) {
+		super(versionNumber, batteryPercentage, carrier, ringTone);
+		// TODO Auto-generated constructor stub
+	}
+
+}

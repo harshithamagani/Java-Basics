@@ -1,0 +1,13 @@
+package com.coding.dojo.dll;
+
+public class DoublyLinkedListTest {
+	public static void main(String[] args) {
+		DoublyLinkedList dll = new DoublyLinkedList();
+		for(int i=1;i<6;i++) {
+			Node newNode = new Node(i);
+			dll.push(newNode);
+		}
+		dll.printValuesForward();
+	}
+
+}

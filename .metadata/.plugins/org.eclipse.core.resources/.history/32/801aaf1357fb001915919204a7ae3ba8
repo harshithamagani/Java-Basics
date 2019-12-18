@@ -1,0 +1,8 @@
+package com.codingDojo.object.master;
+
+public class Wizard extends Human{
+
+	Wizard(){
+		super.setHealth(50);
+	}
+}

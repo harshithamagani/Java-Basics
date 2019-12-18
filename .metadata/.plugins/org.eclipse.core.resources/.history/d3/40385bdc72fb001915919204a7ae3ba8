@@ -1,0 +1,7 @@
+package com.coding.dojo.bank;
+
+public class BankAccountTest {
+BankAccount b1 = new BankAccount();
+BankAccount b2 = new BankAccount();
+
+}

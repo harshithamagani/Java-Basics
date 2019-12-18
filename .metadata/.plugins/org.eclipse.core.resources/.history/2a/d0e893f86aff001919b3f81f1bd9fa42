@@ -1,0 +1,5 @@
+package com.pets.codingdojo.models;
+
+public class Cat {
+
+}

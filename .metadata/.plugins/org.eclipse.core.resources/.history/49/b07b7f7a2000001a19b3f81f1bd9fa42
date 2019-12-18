@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Home Page</title>
+	<style type="text/css">
+	#wrapper{
+	text-align: center;
+	}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<h1>Prototype Roster</h1>
+		<a href="/team-roster/team">New Team</a>
+		<p>Team Player Action</p>
+	</div>
+</body>
+</html>

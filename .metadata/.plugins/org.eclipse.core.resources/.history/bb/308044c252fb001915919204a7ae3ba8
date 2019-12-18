@@ -1,0 +1,30 @@
+package com.codingDojo.object.master;
+
+public class Human {
+	private int strength;
+	private int health;
+	private int intelligence;
+	
+	Human(){
+		setStrength(3);
+		health = 3;
+		intelligence = 3;
+	}
+	
+	Human(int strength,int health,int intelligence){
+		this.setStrength(strength);
+		this.health = health;
+		this.intelligence = intelligence;
+	}
+
+	public int getStrength() {
+		return strength;
+	}
+
+	public void setStrength(int strength) {
+		this.strength = strength;
+	}
+	
+	
+	
+}

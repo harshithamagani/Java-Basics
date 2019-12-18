@@ -1,0 +1,8 @@
+package com.codingDojo.zoo;
+
+public class Bat extends Mammal{
+	public void fly(){
+		int totalEnergy = super.getEnergyLevel();
+		super.setEnergyLevel(totalEnergy-50);
+	}
+}

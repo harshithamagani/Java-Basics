@@ -1,0 +1,81 @@
+package com.coding.controllers;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.coding.models.Player;
+import com.coding.models.Team;
+
+/**
+ * Servlet implementation class Team
+ */
+@WebServlet("/team")
+public class ShowTeam extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ShowTeam() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		if(request.getParameter("id") == null) {
+			RequestDispatcher req = request.getRequestDispatcher("/WEB-INF/createTeamForm.jsp");
+			req.forward(request, response);
+		}
+		else {
+			HttpSession session = request.getSession();
+			if(session.getAttribute("listOfTeams") != null) {
+				ArrayList<Team> arrList = (ArrayList<Team>) session.getAttribute("listOfTeams");
+				request.setAttribute("team", arrList.get(Integer.parseInt(request.getParameter("id"))));
+				request.setAttribute("attributeName",yourStringVAlue);
+				RequestDispatcher req = request.getRequestDispatcher("/WEB-INF/teamDetails.jsp");
+				req.forward(request, response);
+			}
+			
+			System.out.println(request.getParameter("id"));
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		ArrayList<Player> newListOfPlayers = new ArrayList<>();
+		String teamName = request.getParameter("team-name");
+		Team newTeam = new Team(teamName,newListOfPlayers);
+		
+		if(session.getAttribute("listOfTeams") == null) {
+			ArrayList<Team> listOfTeams = new ArrayList<>();
+			session.setAttribute("listOfTeams", listOfTeams);
+			System.out.println("listOfTeams not in session :"+teamName);
+			listOfTeams.add(newTeam);
+		}
+		else {
+			if(session.getAttribute("listOfTeams") instanceof ArrayList) {
+				ArrayList<Team> listOfTeams = (ArrayList<Team>) session.getAttribute("listOfTeams");
+				System.out.println("In session :"+teamName);
+				listOfTeams.add(newTeam);
+			}
+		}
+		response.sendRedirect("/team-roster/home");
+	}
+
+}

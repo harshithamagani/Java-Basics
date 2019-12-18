@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Create player page</title>
+	<style type="text/css">
+		#wrapper{
+			text-align: center;
+		}
+		input{
+		margin:2px;
+		display: block;
+		text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+	<h1>Create New Player</h1>
+		<form action="/team-roster/team" method="post">
+			  <label>First name</label>
+			  <input name="first-name" type="text">
+			  <label>Last name</label>
+			  <input name="last-name" type="text">
+			  <label>Age</label>
+			  <input name="age" type="text">
+			  <input name="submit" value="Submit" type="submit">
+		</form>
+	</div>
+</body>
+</html>

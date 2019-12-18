@@ -1,0 +1,5 @@
+package com.pets.codingdojo.controllers;
+
+public class Cat {
+
+}

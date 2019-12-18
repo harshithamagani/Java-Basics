@@ -1,0 +1,84 @@
+package com.coding.dojo.dll;
+
+public class DoublyLinkedList {
+	public Node head;
+	public Node tail;
+
+	public DoublyLinkedList() {
+		this.head = null;
+		this.tail = null;
+	}
+
+	// Adds new Node to the end of the list
+	public void push(Node newNode) {
+		if (head == null) {
+			this.head = newNode;
+			this.tail = newNode;
+			return;
+		}
+		Node lastNode = this.tail;
+		lastNode.next = newNode;
+		newNode.previous = lastNode;
+		this.tail = newNode;
+	}
+
+	public void printValuesForward() {
+		Node runner = this.head;
+		while(runner != null) {
+			System.out.println(runner.value);
+			runner = runner.next;
+		}
+	}
+	
+	public void printValuesBackward() {
+		Node runner = this.tail;
+		while(runner != null) {
+			System.out.println(runner.value);
+			runner = runner.previous;
+		}
+	}
+	
+	public Node pop() {
+		Node current = this.tail;
+		current.previous.next=null;
+		return current;
+	}
+	
+	public boolean contains(int value){
+		Node first = this.head;
+		Node last = this.tail;
+		
+		while(first != last) {
+			System.out.println("here");
+				if(first.value == value || last.value==value) {
+					return true;
+				}
+				first= first.next;
+				last = last.previous;
+		}
+		return false;	
+	}
+	
+	public int size() {
+		Node runner = this.head;
+		int count = 0;
+		while(runner != null) {
+			System.out.println(runner.value);
+			runner = runner.next;
+			count++;
+		}
+		return count;
+	}
+	
+	public void insertAt(Node newNode,int index) {
+		int count = 1;
+		Node runner = this.head;
+		while(runner != null && count==index) {
+			count++;
+			runner = runner.next;
+		}
+		newNode.next=runner.next;
+		newNode.previous=runner;		
+	}
+	 
+}

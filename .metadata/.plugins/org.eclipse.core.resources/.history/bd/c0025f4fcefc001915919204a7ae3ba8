@@ -1,0 +1,20 @@
+package com.coding.dojo.dll;
+
+public class DoublyLinkedListTest {
+	public static void main(String[] args) {
+		DoublyLinkedList dll = new DoublyLinkedList();
+		for(int i=1;i<6;i++) {
+			Node newNode = new Node(i);
+			dll.push(newNode);
+		}
+		System.out.println("*****print forward********");
+		dll.printValuesForward();
+		System.out.println("*****print backward********");
+		dll.printValuesBackward();
+		dll.pop();
+		System.out.println("*******testing pop function******");
+		dll.printValuesForward();
+		System.out.println(dll.contains(7));
+	}
+
+}

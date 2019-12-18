@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Number Game</title>
+	<style type="text/css">
+		.highlow {
+            width: 100px;
+            height: 100px;
+            border : solid black 1px;
+            text-align: center;
+        }
+        #wrapper{
+        	width:980px;
+        	matgin: 0 auto;
+        	border : solid black 1px;
+        	text-align: center;
+        }
+        
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+			<form action="/" method="POST">
+				<input name="number" id="number" type="text">
+				<input name="submit" name="submit" type="submit" value="Submit">
+			</form>	
+			 <div class="highlow">
+			 	<h2>High!!</h2>
+			 </div>
+			 <div class="highlow">
+			 	<h2>Low!!</h2>
+			 </div>
+			 <div class="highlow">
+		        <h2>Correct</h2>
+		    </div>
+	    </div>
+</body>
+</html>

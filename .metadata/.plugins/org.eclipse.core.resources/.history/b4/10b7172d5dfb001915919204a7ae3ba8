@@ -1,0 +1,13 @@
+package com.codingDojo.object.master;
+
+public class Ninja extends Human {
+	
+	Ninja(){
+		super.setHealth(10);
+	}
+	
+	public void steal(Human h) {
+		
+	}
+
+}

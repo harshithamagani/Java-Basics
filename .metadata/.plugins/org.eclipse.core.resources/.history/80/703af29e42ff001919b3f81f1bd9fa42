@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        #wrapper {
+            width: 950px;
+            margin: 0px auto;
+        }
+
+        #subcontent{
+            margin: 0px auto;
+        }
+
+        .col {
+            min-height: 20px;
+            width: 20px;
+            background-color:lightskyblue;
+            display: inline-block;  
+        }
+    </style>
+    <title>Checker Board</title>
+</head>
+<body>
+    <div id="wrapper">
+       <div id="subcontents">
+       <% num1 = request.getParameter("num1"); %>
+       <% for(int m=0;m<10;m++) { %>
+       <div class="row"></div>
+       <% for(int n=0;n<10;n++) { %>
+       <% if((m+n)%2 != 0){ %>
+       <div class='col' style="background-color:{{color1}}"></div>
+       <% } %>
+       <% if((m+n)%2 == 0) { %>
+       <div class='col' style="background-color:{{color2}}"></div>
+       <% } %>
+       <% } %>
+       <% } %>
+       </div>
+    </div>
+</body>
+</html>

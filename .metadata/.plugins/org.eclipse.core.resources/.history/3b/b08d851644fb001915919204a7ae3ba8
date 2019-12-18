@@ -1,0 +1,17 @@
+package com.codingDojo.zoo;
+
+public class Gorilla extends Mammal{
+
+	public void throwSomething() {
+	 int total_energy = super.getEnergyLevel();
+	 super.setEnergyLevel(total_energy-5);
+	}
+	
+	public void eatBananas() {
+		return super.getEnergyLevel() + 10;
+	}
+ 
+	public int climb() {
+		return super.getEnergyLevel() - 10;
+	}
+}

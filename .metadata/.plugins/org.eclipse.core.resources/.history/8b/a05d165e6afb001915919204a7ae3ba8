@@ -1,0 +1,6 @@
+package com.coding.dojo.bank;
+
+public class BankAccount {
+	private string accountNumber;
+
+}

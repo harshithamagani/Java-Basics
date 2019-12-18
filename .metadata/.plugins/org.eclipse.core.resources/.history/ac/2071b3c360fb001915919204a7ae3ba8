@@ -1,0 +1,9 @@
+package com.codingDojo.object.master;
+
+public class SampleTest {
+	public static void main(String [] args) {
+		Wizard w1 = new Wizard();
+		Wizard w2 = new Wizard();
+		
+	}
+}

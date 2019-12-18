@@ -1,0 +1,9 @@
+package com.codingDojo.zoo;
+
+public class Gorilla extends Mammal{
+
+	public int throwSomething() {
+		return super.getEnergyLevel() - 5;
+	}
+
+}

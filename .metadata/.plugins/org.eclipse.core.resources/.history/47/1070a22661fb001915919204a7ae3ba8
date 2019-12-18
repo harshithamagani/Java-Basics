@@ -1,0 +1,15 @@
+package com.codingDojo.object.master;
+
+public class SampleTest {
+	public static void main(String [] args) {
+		Wizard w1 = new Wizard();
+		Wizard w2 = new Wizard();
+		Samurai s1 = new Samurai();
+		Samurai s2 = new Samurai();
+		s2.deathBlow(w2);
+		w2.displayInfo();
+		w1.heal(w2);
+		w2.displayInfo();
+		
+	}
+}

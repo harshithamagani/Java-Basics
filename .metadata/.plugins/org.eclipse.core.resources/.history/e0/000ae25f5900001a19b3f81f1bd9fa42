@@ -1,0 +1,67 @@
+package com.coding.controllers;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.coding.models.Player;
+import com.coding.models.Team;
+import com.sun.media.jfxmedia.events.PlayerEvent;
+
+/**
+ * Servlet implementation class Player
+ */
+@WebServlet("/player")
+public class ShowPlayer extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ShowPlayer() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if(request.getParameter("id") == null) {
+			HttpSession session = request.getSession();
+			Team team = (Team) session.getAttribute("team");
+			System.out.println(team.getTeam_name());
+			RequestDispatcher req = request.getRequestDispatcher("/WEB-INF/createPlayerForm.jsp");
+			req.forward(request, response);
+		} else {
+			HttpSession session = request.getSession();
+			Team team = (Team) session.getAttribute("team");
+			RequestDispatcher req = request.getRequestDispatcher("/WEB-INF/showPlayer.jsp");
+			req.forward(request, response);
+		}
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		Team team = (Team) session.getAttribute("team");
+		String firstName = (String) request.getAttribute("first-name");
+		String lastName = (String) request.getAttribute("last-name");
+		String age = (String) request.getAttribute("first-name");
+		Player player = new Player();
+		team
+		doGet(request, response);
+	}
+
+}
